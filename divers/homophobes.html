@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
+		<title>Les homophobes sont-ils cons ?</title>
+
+		<style type="text/css">
+
+		.abscenter
+		{
+			width: 100vw;
+			height: 100vh;
+			margin-left: auto;
+			margin-right: auto;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+		
+		.bouton-rep
+		{
+			width: 100px;
+			text-transform: uppercase;
+		}
+		
+		#boutons
+		{
+			margin-bottom: 10px;
+		}
+
+		</style>
+
+		<script type="text/javascript" src="../jquery/jquery.min.js"></script>
+		<script type="text/javascript">
+
+		const HTML_OUI = '<button id="oui" type="button" value="Oui" class="bouton-rep btn btn-success btn-lg"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> oui</button>';
+		const HTML_NON = '<button id="non" type="button" value="Non" class="bouton-rep btn btn-danger btn-lg"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> non</button>';
+		
+		const permuter1 = function()
+		{
+			$('#b1').html(HTML_OUI);
+			$('#b2').html(HTML_NON);
+		}
+
+		const permuter2 = function()
+		{
+			$('#b1').html(HTML_NON);
+			$('#b2').html(HTML_OUI);
+		}
+
+		const action1 = function()
+		{
+			permuter1();
+			$('#non').mouseenter(action2);
+			$('.bouton-rep').click(afficherReponse);
+		}
+
+		const action2 = function()
+		{
+			permuter2();
+			$('#non').mouseenter(action1);
+			$('.bouton-rep').click(afficherReponse);
+		}
+
+		const afficherReponse = function()
+		{
+			$("#rep").html('Votre réponse : <strong>'+$(this).val()+'</strong>');
+		}
+
+		$(document).ready(function()
+		{
+			action1();
+		});
+
+		</script>
+	</head>
+	<body>
+		<div class="abscenter container">
+			<h1>Les homophobes sont-ils cons ?</h1>
+			<div id="boutons" class="wrapper">
+				<span id="b1"></span>
+				<span id="b2"></span>
+			</div>
+			<div id="reponse" class="wrapper">
+				<p id="rep"></p>
+			</div>
+		</div>
+	</body>
+</html>
