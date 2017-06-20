@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="../css/couleurOptions.css" type="text/css" />
+		<script src="../jquery/jquery.min.js"></script>
+		<script src="../clipboard/clipboard.min.js"></script>
+		<script src="js/damier.js"></script>
+		<title>Générateur de damiers pour Minecraft</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="page-header">
+				<h1>Générateur de damiers pour Minecraft</h1>
+			</header>
+			<noscript>
+				<div class="alert alert-danger" role="alert">Cette application nécessite JavaScript pour fonctionner.</div>
+			</noscript>
+			<div class="formulaire row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="largeur" class="control-label col-sm-4">Largeur (x)</label>
+							<div class="col-sm-4">
+								<input type="number" min="1" max="64" value="10" class="form-control" id="largeur" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="hauteur" class="control-label col-sm-4">Hauteur (z)</label>
+							<div class="col-sm-4">
+								<input type="number" min="1" max="64" value="10" class="form-control" id="hauteur" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="hauteur" class="control-label col-sm-4">Bloc</label>
+							<div class="col-sm-8 col-md-6">
+								<select class="form-control" id="bloc">
+									<option value="wool" selected>wool</option>
+									<option value="stained_hardened_clay">stained_hardened_clay</option>
+									<option value="stained_glass">stained_glass</option>
+									<option value="concrete">concrete</option>
+									<option value="concrete_powder">concrete_powder</option>
+									<option value="glazed_terracotta">glazed_terracotta</option>
+									<option value="shulker_box">shulker_box</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="hauteur" class="control-label col-sm-4">Couleur 1</label>
+							<div class="col-sm-8 col-md-6">
+								<select class="form-control" id="couleur1">
+									<option value="white" selected>white</option>
+									<option value="orange">orange</option>
+									<option value="magenta">magenta</option>
+									<option value="light_blue">light_blue</option>
+									<option value="yellow">yellow</option>
+									<option value="lime">lime</option>
+									<option value="pink">pink</option>
+									<option value="gray">gray</option>
+									<option value="silver">silver</option>
+									<option value="cyan">cyan</option>
+									<option value="purple">purple</option>
+									<option value="blue">blue</option>
+									<option value="brown">brown</option>
+									<option value="green">green</option>
+									<option value="red">red</option>
+									<option value="black">black</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="hauteur" class="control-label col-sm-4">Couleur 2</label>
+							<div class="col-sm-8 col-md-6">
+								<select class="form-control" id="couleur2">
+									<option value="white">white</option>
+									<option value="orange">orange</option>
+									<option value="magenta">magenta</option>
+									<option value="light_blue">light_blue</option>
+									<option value="yellow">yellow</option>
+									<option value="lime">lime</option>
+									<option value="pink">pink</option>
+									<option value="gray">gray</option>
+									<option value="silver">silver</option>
+									<option value="cyan">cyan</option>
+									<option value="purple">purple</option>
+									<option value="blue">blue</option>
+									<option value="brown">brown</option>
+									<option value="green">green</option>
+									<option value="red">red</option>
+									<option value="black" selected>black</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-4 col-sm-8">
+								<button type="button" class="btn btn-primary" id="boutonGenerer">Générer</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="resultat row">
+				<div class="col-xs-12">
+					<div class="pull-right">
+						<button type="button" class="close" id="boutonCopier" data-clipboard-action="copy" data-clipboard-target="#fonction"><span class="glyphicon glyphicon-copy"></span> Copier dans le presse-papier</button>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<pre class="pre-scrollable" id="fonction"></pre>
+				</div>
+			</div>
+			<div class="row">
+				<footer class="col-xs-12">
+					<p class="pull-right">&copy; Sevivon, 2017</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
