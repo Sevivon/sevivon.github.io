@@ -47,7 +47,7 @@ function genererFonction()
 $(document).ready(function()
 {
 	initialiserFormulaire();
-	$("#largeur, #hauteur").keyup(verifierDimensions);
+	$("#largeur, #hauteur").blur(verifierDimensions);
 	$("#boutonGenerer").click(genererFonction);
 	new Clipboard("#boutonCopier");
 });
