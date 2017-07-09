@@ -49,7 +49,7 @@ function verifierSaisieEchelle()
 
 function genererFonction()
 {	
-	var expression = $("#expression").val().replace(/\s/g,"");
+	var expression = $("#expression").val().replace(/\s+/g,"");
 	var xMin       = parseInt($("#xMin").val());
 	var xMax       = parseInt($("#xMax").val());
 	
@@ -97,7 +97,7 @@ function genererFonction()
 $(document).ready(function()
 {
 	initialiserFormulaire();
-	$("#expression").change(function(){ if ( /^\s$/.test($(this).val()) ) $(this).val("x"); });
+	$("#expression").change(function(){ if ( /^\s*$/.test($(this).val()) ) $(this).val("x"); });
 	$("#xMin").change(verifierSaisieMin);
 	$("#xMax").change(verifierSaisieMax);
 	$("#echelleX, #echelleZ").change(verifierSaisieEchelle);
