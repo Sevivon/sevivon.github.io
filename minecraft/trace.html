@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="../css/couleurOptions.css" type="text/css" />
+		<script src="../lib/jquery/jquery.min.js"></script>
+		<script src="../lib/clipboard/clipboard.min.js"></script>
+		<script src="../lib/mathjs/math.min.js"></script>
+		<script src="js/trace.js"></script>
+		<title>Représentation de fonctions mathématiques sur Minecraft</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="page-header">
+				<h1>Représentation de fonctions mathématiques sur Minecraft</h1>
+			</header>
+			<noscript>
+				<div class="alert alert-danger" role="alert">Cette application nécessite JavaScript pour fonctionner.</div>
+			</noscript>
+			<div class="formulaire row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Fonction</legend>
+							<div class="form-group">
+								<label for="expression" class="control-label col-sm-4">f(x)&nbsp;=</label>
+								<div class="col-sm-8 col-md-6">
+									<input type="text" class="form-control" id="expression" value="x" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="xMin" class="control-label col-sm-4">Borne inférieure</label>
+								<div class="col-sm-4">
+									<input type="number" value="0" class="form-control" id="xMin" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="xMax" class="control-label col-sm-4">Borne supérieure</label>
+								<div class="col-sm-4">
+									<input type="number" value="10" class="form-control" id="xMax" />
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Tracé</legend>
+							<div class="form-group">
+								<label for="bloc" class="control-label col-sm-4">Bloc</label>
+								<div class="col-sm-8 col-md-6">
+									<select class="form-control" id="bloc"></select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="couleur" class="control-label col-sm-4">Couleur</label>
+								<div class="col-sm-8 col-md-6">
+									<select class="form-control" id="couleur"></select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="echelleX" class="control-label col-sm-4" title="nombre de blocs pour une unité en x">Échelle abscisses</label>
+								<div class="col-sm-4">
+									<input type="number" min="1" value="1" class="form-control" id="echelleX" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="echelleZ" class="control-label col-sm-4" title="nombre de blocs pour une unité en z">Échelle ordonnées</label>
+								<div class="col-sm-4">
+									<input type="number" min="1" value="1" class="form-control" id="echelleZ" />
+								</div>
+							</div>
+						</fieldset>
+						<div class="form-group">
+							<div class="col-sm-offset-4 col-sm-8">
+								<button type="button" class="btn btn-primary" id="boutonGenerer">Générer</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="resultat row">
+				<div class="col-xs-12">
+					<div class="pull-right">
+						<button type="button" class="close" id="boutonCopier" data-clipboard-action="copy" data-clipboard-target="#fonction"><span class="glyphicon glyphicon-copy"></span> Copier dans le presse-papier</button>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<pre class="pre-scrollable" id="fonction"></pre>
+				</div>
+			</div>
+			<div class="row">
+				<footer class="col-xs-12">
+					<p class="pull-right">&copy; Sevivon, 2017</p>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
