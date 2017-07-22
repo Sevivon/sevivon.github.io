@@ -1,6 +1,6 @@
 option[value=white]      { background-color: white;                   }
 option[value=orange]     { background-color: orange;                  }
-option[value=magenta]    { background-color: magenta;                 }
+option[value=magenta]    { background-color: magenta;   color: white; }
 option[value=light_blue] { background-color: lightblue;               }
 option[value=yellow]     { background-color: yellow;                  }
 option[value=lime]       { background-color: lime;                    }
